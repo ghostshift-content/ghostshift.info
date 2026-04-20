@@ -1,0 +1,205 @@
+# ──────────────────────────────────────────────────────────────
+#  ghostshift.info — .gitignore
+#  Paranoid by design. If you ever stage a credential by accident,
+#  git rm --cached it AND rotate the secret. Assume git history
+#  is public forever.
+# ──────────────────────────────────────────────────────────────
+
+
+# ── Secrets & credentials ────────────────────────────────────
+# Dotenv + variants
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+
+# Generic secret files
+*.secret
+*.secrets
+secrets/
+secret/
+credentials
+credentials.*
+*credentials*
+*.credentials
+config.local.*
+local.settings.json
+appsettings.Development.json
+appsettings.Local.json
+
+# API keys / tokens
+*.token
+*token*.json
+*token*.txt
+.api_key
+.apikey
+api_keys.*
+auth.json
+.npmrc
+.yarnrc
+.pypirc
+.netrc
+
+
+# ── Private keys & certs ─────────────────────────────────────
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.crt
+*.cer
+*.der
+*.asc
+*.gpg
+*.pgp
+*.kdb
+*.kdbx
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+id_ecdsa
+id_ecdsa.*
+id_dsa
+id_dsa.*
+known_hosts
+authorized_keys
+
+# Cloud provider credentials
+.aws/
+.azure/
+.gcloud/
+.config/gcloud/
+gcloud-*.json
+*-service-account*.json
+*serviceaccount*.json
+*service-account*.json
+google-credentials*.json
+firebase-adminsdk-*.json
+
+# SSH / VPN
+.ssh/
+*.ovpn
+*.wireguard
+wg*.conf
+*.mobileconfig
+
+
+# ── Pentest artifacts (NEVER commit client data) ─────────────
+# Scan outputs
+*.nessus
+*.nmap
+*.gnmap
+*.xml.scan
+nmap-*.xml
+burp-*.xml
+zap-*.xml
+*.har
+loot/
+loot.*
+evidence/
+evidence.*
+engagements/
+clients/
+reports/raw/
+reports/drafts/
+
+# Credential dumps
+*.ntds
+*.sam
+hashes.txt
+cracked.txt
+dump.sql
+shadow
+*secretsdump*
+ntlm-*.txt
+kerberoast*.txt
+cleartext*.txt
+
+# Payloads / shells
+payloads/
+shells/
+*.jsp
+*.aspx
+*.war
+*.raw
+beacon_*
+stager_*
+
+# Wordlists & custom rules with targets in them
+wordlists/targets/
+scope/
+out-of-scope/
+targets.txt
+targets-live.txt
+
+
+# ── Editor / OS cruft ────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.Trash-*
+
+
+# ── Node / build ─────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+dist/
+build/
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vercel/
+.netlify/
+
+
+# ── Python ──────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.Python
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+
+# ── Logs / temp ──────────────────────────────────────────────
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.bak
+*.orig
+*.rej
+
+
+# ── Local uploads & scratch ──────────────────────────────────
+uploads/
+scratch/
+notes-private/
+drafts-private/
+TODO.private.md
+
+
+# ── Git hygiene ──────────────────────────────────────────────
+# Prevent accidentally committing a nested .git directory
+**/.git/
+*.patch.private
